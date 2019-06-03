@@ -18,6 +18,10 @@ public final class LoginPage extends AbstractPage {
         super(driver);
     }
 
+    public boolean isLoginButtonDisplayed() {
+        return loginButton.isDisplayed();
+    }
+
     public LoginPage fillLoginForm(String email, String password) {
         fillField(emailField, email);
         fillField(passwordField, password);

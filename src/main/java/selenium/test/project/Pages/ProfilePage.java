@@ -22,32 +22,40 @@ public class ProfilePage extends AbstractPage {
     @FindBy(xpath = "/html/body/div[1]/div/main/div/div/div[1]/div/div[2]/div/div[1]/div[3]/div/div[1]")
     private WebElement infoLastName;
 
-    //Country field
-    @FindBy(xpath = "/html/body/div[1]/div/main/div/div/div[1]/div/div[2]/div/div[1]/div[4]/div[1]/div/div[2]/div")
+    //Field for selection country
+    @FindBy(xpath = "/html/body/div[1]/div/main/div/div/div[1]/div/div[2]/div/div[1]/div[4]/div[1]/div/div[2]/div[1]/div/div[1]")
     private WebElement selectCountry;
 
-    //Select Country button
-    @FindBy(xpath = "/html/body/div[1]/div/main/div/div/div[1]/div/div[2]/div/div[1]/div[4]/div[1]/div/div[2]/div[2]/div/span")
+    //Country button
+    @FindBy(xpath = "/html/body/div[1]/div/main/div/div/div[1]/div/div[2]/div[1]/div[1]/div[4]/div[1]/div/div[2]/div[2]/div/span")
     private WebElement countryButton;
 
     //Country Info is displayed
     @FindBy(xpath = "/html/body/div[1]/div/main/div/div/div[1]/div/div[2]/div[1]/div[1]/div[4]/div[1]/div/div[2]/div/div/div[1]")
     private WebElement countryInfo;
 
-    //Language field
-    @FindBy(xpath = "/html/body/div[1]/div/main/div/div/div[1]/div/div[2]/div[1]/div[1]/div[5]/div/div[2]/div")
+    //Field for selection language
+    @FindBy(xpath = "/html/body/div[1]/div/main/div/div/div[1]/div/div[2]/div/div[1]/div[5]/div/div[2]")
     private WebElement selectLanguage;
 
     //Select Language button
-    @FindBy(xpath = "/html/body/div[1]/div/main/div/div/div[1]/div/div[2]/div[1]/div[1]/div[5]/div/div[2]/div[2]/div[2]/span")
+    @FindBy(xpath = "/html/body/div[1]/div/main/div/div/div[1]/div/div[2]/div[1]/div[1]/div[5]/div/div[2]/div[2]/div[2]")
     private WebElement languageButton;
 
     //Language info is displayed
     @FindBy(xpath = "/html/body/div[1]/div/main/div/div/div[1]/div/div[2]/div[1]/div[1]/div[5]/div/div[2]/div/div/div[1]")
     private WebElement languageInfo;
 
+    //Line to add Email info
+    @FindBy(xpath = "/html/body/div[1]/div/main/div/div/div[1]/div/div[2]/div[1]/div[2]/div[3]/div[1]/div/input")
+    private WebElement emailField;
+
+    //Email field for confirmation
+    @FindBy(xpath = "/html/body/div[1]/div/main/div/div/div[1]/div/div[2]/div[1]/div[2]/div[3]/div[1]/div/input")
+    private WebElement infoEmail;
+
     //Confirmed button for clicking to save profile information
-    @FindBy(xpath = "/html/body/div[1]/div/main/div/div/div[1]/div/div[2]/div[2]/div[2]/button")
+    @FindBy(xpath = "/html/body/div[1]/div/main/div/div/div[1]/div/div[2]/div[2]/div[2]/button/div/span")
     private WebElement confirmedButton;
 
 
@@ -75,6 +83,7 @@ public class ProfilePage extends AbstractPage {
 
     //Select Country
     public ProfilePage selectCountry(){
+ //       countryInfo.clear();
         clickElement(selectCountry);
         clickElement(countryButton);
         return this;
@@ -85,12 +94,22 @@ public class ProfilePage extends AbstractPage {
 
     //Select Language
     public ProfilePage selectLanguage(){
+ //       languageInfo.clear();
         clickElement(selectLanguage);
         clickElement(languageButton);
         return this;
     }
     public boolean isLanguageDisplayed(){
         return languageInfo.isDisplayed();
+    }
+
+    //Add Email
+    public ProfilePage addEmail(String email) {
+        fillField(emailField, email);
+        return this;
+    }
+    public boolean isEmailDisplayed() {
+        return infoEmail.isDisplayed();
     }
 
     //Click Confirm button to save info to Profile

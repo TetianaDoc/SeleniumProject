@@ -41,4 +41,4 @@ public class DashboardPage extends AbstractPage {
         clickElement(exitButton);
         return new DashboardPage(driver);
     }
-}
+    }

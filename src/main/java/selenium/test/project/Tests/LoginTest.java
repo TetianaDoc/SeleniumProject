@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import selenium.test.project.Pages.DashboardPage;
 import selenium.test.project.Pages.LoginPage;
 
-public class LoginTest extends AbstractTest{
+public class LoginTest extends AbstractTest {
 
 
     @Test
@@ -15,5 +15,4 @@ public class LoginTest extends AbstractTest{
         DashboardPage dashboardPage = loginPage.submitLoginForm();
         Assert.assertTrue(dashboardPage.isDashboardButtonDisplayed());
     }
-
 }
