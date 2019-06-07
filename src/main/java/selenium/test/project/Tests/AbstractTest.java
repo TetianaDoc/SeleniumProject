@@ -6,8 +6,8 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-import selenium.test.project.Tests.Utils.CustomPath;
-import selenium.test.project.Tests.Utils.CustomScreenshot;
+import selenium.test.project.Utils.CustomPath;
+import selenium.test.project.Utils.CustomScreenshot;
 
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -30,8 +30,8 @@ public abstract class AbstractTest {
         //Creation and Initialisation object DRIVER for Firefox browser
         driver = new FirefoxDriver();
 
-        //Setup global timeout for 6 seconds
-        driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
+        //Setup global timeout for 10 seconds
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         //Go to testing site
         driver.get("http://berize-dev.com");

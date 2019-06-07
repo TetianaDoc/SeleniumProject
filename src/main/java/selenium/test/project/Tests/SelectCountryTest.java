@@ -11,7 +11,8 @@ public class SelectCountryTest extends AbstractTest {
     public void successSelectCountry() {
         DashboardPage dashboardPage = new DashboardPage(driver);
         ProfilePage profilePage = dashboardPage.goToProfilePage();
-        profilePage.selectCountry();
+        ProfilePage selectCountry=profilePage.selectCountry();
+        profilePage=selectCountry.submitProfileForms();
         Assert.assertTrue(profilePage.isCountryDisplayed());
     }
 }

@@ -1,4 +1,4 @@
-package selenium.test.project.Tests.Utils;
+package selenium.test.project.Utils;
 
 public class BaseProperties {
 

@@ -1,5 +1,6 @@
 package selenium.test.project.Pages;
 
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -54,6 +55,14 @@ public class ProfilePage extends AbstractPage {
     @FindBy(xpath = "/html/body/div[1]/div/main/div/div/div[1]/div/div[2]/div[1]/div[2]/div[3]/div[1]/div/input")
     private WebElement infoEmail;
 
+    //Line to add Phone number
+    @FindBy(xpath = "/html/body/div[1]/div/main/div/div/div[1]/div/div[2]/div/div[2]/div[2]/div[2]/div/input")
+    private WebElement phoneNumberField;
+
+    //Phone number field for confirmation
+    @FindBy(xpath = "/html/body/div[1]/div/main/div/div/div[1]/div/div[2]/div/div[2]/div[2]/div[2]/div/input")
+    private WebElement infoPhoneNumber;
+
     //Confirmed button for clicking to save profile information
     @FindBy(xpath = "/html/body/div[1]/div/main/div/div/div[1]/div/div[2]/div[2]/div[2]/button/div/span")
     private WebElement confirmedButton;
@@ -68,6 +77,7 @@ public class ProfilePage extends AbstractPage {
         fillField(nameField, name);
         return this;
     }
+
     public boolean isNameDisplayed() {
         return infoName.isDisplayed();
     }
@@ -77,29 +87,32 @@ public class ProfilePage extends AbstractPage {
         fillField(lastNameField, lastname);
         return this;
     }
+
     public boolean isLastNameDisplayed() {
         return infoLastName.isDisplayed();
     }
 
     //Select Country
-    public ProfilePage selectCountry(){
- //       countryInfo.clear();
+    public ProfilePage selectCountry() {
+        //       countryInfo.clear();
         clickElement(selectCountry);
         clickElement(countryButton);
         return this;
     }
-    public boolean isCountryDisplayed(){
+
+    public boolean isCountryDisplayed() {
         return countryInfo.isDisplayed();
     }
 
     //Select Language
-    public ProfilePage selectLanguage(){
- //       languageInfo.clear();
+    public ProfilePage selectLanguage() {
+        //       languageInfo.clear();
         clickElement(selectLanguage);
         clickElement(languageButton);
         return this;
     }
-    public boolean isLanguageDisplayed(){
+
+    public boolean isLanguageDisplayed() {
         return languageInfo.isDisplayed();
     }
 
@@ -108,14 +121,29 @@ public class ProfilePage extends AbstractPage {
         fillField(emailField, email);
         return this;
     }
+
     public boolean isEmailDisplayed() {
         return infoEmail.isDisplayed();
     }
 
-    //Click Confirm button to save info to Profile
-    public ProfilePage submitProfileForms() {
-        clickElement(confirmedButton);
-        return new ProfilePage(driver);
+    //Add Phone Number
+    public ProfilePage addPhoneNumber(String phone_number) {
+        fillField(phoneNumberField, phone_number);
+        return this;
     }
 
+    public boolean isPhoneNumberDisplayed() {
+        return infoPhoneNumber.isDisplayed();
+    }
+
+    //Click Confirm button to save info to Profile
+    public ProfilePage submitProfileForms() {
+
+        try {
+            clickElement(confirmedButton);
+            return new ProfilePage(driver);
+        } catch (NoSuchElementException e) {
+            return this;
+        }
+    }
 }

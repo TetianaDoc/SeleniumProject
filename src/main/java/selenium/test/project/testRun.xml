@@ -9,6 +9,7 @@
             <class name="selenium.test.project.Tests.SelectCountryTest"/>
             <class name="selenium.test.project.Tests.SelectLanguageTest"/>
             <class name="selenium.test.project.Tests.AddEmailToProfileTest"/>
+            <class name="selenium.test.project.Tests.AddPhoneNumberToProfileTest"/>
             <class name="selenium.test.project.Tests.LogoutTest"/>
         </classes>
     </test>
