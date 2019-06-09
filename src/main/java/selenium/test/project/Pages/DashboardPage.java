@@ -19,7 +19,6 @@ public class DashboardPage extends AbstractPage {
     private WebElement exitButton;
 
 
-
     public DashboardPage(WebDriver driver) {
         super(driver);
     }
@@ -36,9 +35,9 @@ public class DashboardPage extends AbstractPage {
     }
 
     //Logout
-    public DashboardPage clickExitButton(){
+    public DashboardPage clickExitButton() {
         clickElement(dropdownMenuLink);
         clickElement(exitButton);
         return new DashboardPage(driver);
     }
-    }
+}

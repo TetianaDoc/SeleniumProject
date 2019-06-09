@@ -10,8 +10,8 @@ public class SelectLanguageTest extends AbstractTest {
     public void successSelectLanguage() {
         DashboardPage dashboardPage = new DashboardPage(driver);
         ProfilePage profilePage = dashboardPage.goToProfilePage();
-        ProfilePage selectLanguage=profilePage.selectLanguage();
-        profilePage=selectLanguage.submitProfileForms();
+        ProfilePage selectLanguage = profilePage.selectLanguage();
+        profilePage = selectLanguage.submitProfileForms();
         Assert.assertTrue(profilePage.isLanguageDisplayed());
     }
 }

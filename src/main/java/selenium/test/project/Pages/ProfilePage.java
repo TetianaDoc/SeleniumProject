@@ -94,7 +94,6 @@ public class ProfilePage extends AbstractPage {
 
     //Select Country
     public ProfilePage selectCountry() {
-        //       countryInfo.clear();
         clickElement(selectCountry);
         clickElement(countryButton);
         return this;
@@ -106,7 +105,6 @@ public class ProfilePage extends AbstractPage {
 
     //Select Language
     public ProfilePage selectLanguage() {
-        //       languageInfo.clear();
         clickElement(selectLanguage);
         clickElement(languageButton);
         return this;

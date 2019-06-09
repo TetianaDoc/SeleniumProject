@@ -3,6 +3,7 @@
 <suite name="Suite1" verbose="1" >
     <test name="Regression1">
         <classes>
+            <class name="selenium.test.project.Tests.ChooseLanguageTest"/>
             <class name="selenium.test.project.Tests.LoginTest"/>
             <class name="selenium.test.project.Tests.AddNameToProfileTest"/>
             <class name="selenium.test.project.Tests.AddLastNameToProfileTest"/>

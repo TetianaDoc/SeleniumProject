@@ -10,7 +10,7 @@ public class LogoutTest extends AbstractTest {
     public void successLogoutTest() {
         DashboardPage dashboardPage = new DashboardPage(driver);
         dashboardPage.clickExitButton();
-        LoginPage loginPage=new LoginPage(driver);
+        LoginPage loginPage = new LoginPage(driver);
         Assert.assertTrue(loginPage.isLoginButtonDisplayed());
     }
 }
